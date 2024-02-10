@@ -24,8 +24,14 @@
 #define DIP_SWITCH_PINS \
     { A8 }
 
+/* Num lock LED Pin */
+// REWHEX: Num lock RGB is disabled; let's show LED num lock state where is Caps lock LED was (Caps lock is moved).
+#define LED_NUM_LOCK_PIN A7
+
 /* Caps lock LED Pin */
-#define LED_CAPS_LOCK_PIN A7
+// REWHEX: Caps lock LED changed from A7 (most right led) to Bluetooth LED H3 (in the middle)
+#define LED_CAPS_LOCK_PIN H3
+
 #define LED_PIN_ON_STATE 1
 
 /* Increase I2C speed to 1000 KHz */
@@ -51,8 +57,9 @@
 
 #    define HOST_DEVICES_COUNT 3
 
-#    define HOST_LED_PIN_LIST \
-        { H3, H3, H3 }
+// REWHEX: disable Bluetooth LED state
+/* #    define HOST_LED_PIN_LIST \
+        { H3, H3, H3 } */
 #    define HOST_LED_PIN_ON_STATE 1
 
 #    if defined(RGB_MATRIX_ENABLE) || defined(LED_MATRIX_ENABLE)
